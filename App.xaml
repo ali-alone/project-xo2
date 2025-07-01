@@ -1,0 +1,17 @@
+﻿<Application x:Class="project_xxx.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:project_xxx"
+             StartupUri="MainForm.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="styles/Image.xaml"/>
+                <ResourceDictionary Source="styles/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="styles/Page.xaml"/>
+                <ResourceDictionary Source="styles/Text.xaml"/>
+                <ResourceDictionary Source="styles/DataTamplate.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
