@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="project_xo2.user.USTC"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:project_xo2.user"
+        xmlns:vm="clr-namespace:project_xo2.user"
+        mc:Ignorable="d"
+        Style="{StaticResource Page_Style}"
+         d:DesignHeight="600" d:DesignWidth="622">
+    <UserControl.DataContext>
+        <vm:USTCWM/>
+    </UserControl.DataContext>
+    <Grid>
+        <Border>
+            <Border.Background>
+                <ImageBrush ImageSource="/image/user.png" Stretch ="Fill" />
+            </Border.Background>
+        </Border>
+
+
+
+        <DataGrid Margin="25,82,27,271" BorderThickness="0"  Background="#4e7390" BorderBrush="Transparent" Foreground="#879db1"   Name="datagrid1"/>
+
+        <Button x:Name="button2" Content="Search"  Margin="193,546,321,20" Click="button2_Click"  />
+        <Button x:Name="button3" Content="show"  Margin="324,543,193,17" Click="button3_Click"   />
+
+
+        <TextBlock Text="U_STC" Style="{StaticResource Text_Style}" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" FontSize="50"/>
+
+        <TextBlock Text="STNO: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="20" Margin="40,340,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="TNO: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="20" Margin="40,380,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="CNO: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="20" Margin="40,420,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="Term: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="20" Margin="40,460,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.503,0.323"/>
+        <TextBlock Text="Grade: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="20" Margin="40,500,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBox x:Name="textbox1" Margin="108,340,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" FontSize="20" Background="Transparent" Opacity="0.5" Width="487"  />
+        <TextBox x:Name="textbox2" Margin="108,380,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" FontSize="20" Background="Transparent" Opacity="0.5" Width="487"  />
+        <TextBox x:Name="textbox3" Margin="108,420,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" FontSize="20" Background="Transparent" Opacity="0.5" Width="487"  />
+        <TextBox x:Name="textbox4" Margin="108,460,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" FontSize="20" Background="Transparent" Opacity="0.5" Width="487"  />
+        <TextBox x:Name="textbox5" Margin="108,500,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" FontSize="20" Background="Transparent" Opacity="0.5" Width="487"  />
+
+
+
+    </Grid>
+</UserControl>

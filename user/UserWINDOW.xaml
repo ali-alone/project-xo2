@@ -1,0 +1,96 @@
+﻿<Window x:Class="project_xo2.user.UserWINDOW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project_xo2.user"
+        xmlns:vm="clr-namespace:project_xo2.user"
+        xmlns:menu="clr-namespace:project_xo2.Utilities"
+        mc:Ignorable="d" Background="Transparent"
+        Title="MainForm" Height="600" Width="850" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        d:DataContext="{d:DesignInstance vm:UserWM}">
+
+    <Window.DataContext>
+        <vm:UserWM/>
+    </Window.DataContext>
+    <Grid>
+        <Border Background="#102948" CornerRadius="20"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="228"/>
+                <ColumnDefinition Width="549.4"/>
+                <ColumnDefinition Width="72.6"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid HorizontalAlignment="Center" Width="228">
+                <Border Background="#4a5c70" CornerRadius="20,0,0,20"/>
+                <StackPanel Height="400" Width="228">
+                    <menu:Btn Style="{StaticResource BtnKey}"
+                         Command="{Binding MainCommand}" IsChecked="True" Checked="Btn_Checked">
+
+                        <Grid>
+                            <Image Source="/image/home icon.png" HorizontalAlignment="Left" />
+                            <TextBlock Text="Home" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,0,0" Style="{StaticResource Text_Style}" RenderTransformOrigin="0.622,0.5"/>
+                        </Grid>
+
+                    </menu:Btn>
+
+                    <menu:Btn Style="{StaticResource BtnKey}"
+                         Command="{Binding UserStudentCommand}" IsChecked="True" Checked="Btn_Checked">
+
+                        <Grid>
+                            <Image Source="/image/student icon.png" HorizontalAlignment="Left" />
+                            <TextBlock Text="U_Student" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,0,0" Style="{StaticResource Text_Style}" RenderTransformOrigin="0.622,0.5"/>
+                        </Grid>
+
+                    </menu:Btn>
+
+
+                    <menu:Btn Style="{StaticResource BtnKey}"
+      Command="{Binding UTeacherCommand}" IsChecked="True" Checked="Btn_Checked">
+
+                        <Grid>
+                            <Image Source="/image/teacher icon.png" HorizontalAlignment="Left" />
+                            <TextBlock Text="U_TEACHERs" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,0,0" Style="{StaticResource Text_Style}" RenderTransformOrigin="0.622,0.5"/>
+                        </Grid>
+
+                    </menu:Btn>
+
+                    <menu:Btn Style="{StaticResource BtnKey}"
+      Command="{Binding UCourseCommand}" IsChecked="True" Checked="Btn_Checked">
+
+                        <Grid>
+                            <Image Source="/image/course icon.png" HorizontalAlignment="Left" />
+                            <TextBlock Text="U_Course" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,0,0" Style="{StaticResource Text_Style}" RenderTransformOrigin="0.622,0.5"/>
+                        </Grid>
+
+                    </menu:Btn>
+
+                    <menu:Btn Style="{StaticResource BtnKey}"
+                      Command="{Binding USTCCommand}" IsChecked="True" Checked="Btn_Checked">
+
+                        <Grid>
+                            <Image Source="/image/stc icon.png" HorizontalAlignment="Left" />
+                            <TextBlock Text="U_STC" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,0,0" Style="{StaticResource Text_Style}" RenderTransformOrigin="0.622,0.5"/>
+                        </Grid>
+
+                    </menu:Btn>
+
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Column="1" Grid.ColumnSpan="2">
+                <ContentControl x:Name="pages"
+                                Content="{Binding CurrentView}"/>
+            </Grid>
+            <Button x:Name="CloseApp"
+         Style="{StaticResource ExitApp}"
+         Click="CloseApp_Click" Grid.Column="2" Margin="0,10,10,0" />
+
+            <Button x:Name="BackApp"
+         Style="{StaticResource BackApp}"
+         Click="BackApp_Click" Grid.Column="1" Margin="0,15,55,0" Grid.ColumnSpan="2" Height="30" Width="34" />
+
+        </Grid>
+    </Grid>
+</Window>

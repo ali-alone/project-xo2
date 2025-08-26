@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:project_xo2.Utilities">
     <Style TargetType="{x:Type Button}">
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="FontFamily" Value="B"/>
@@ -11,7 +12,7 @@
                     <Border Background="{TemplateBinding Background}" 
                             CornerRadius="25" 
                             BorderThickness="2" 
-                            BorderBrush="Black" >
+                            BorderBrush="#5b697c" >
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -37,9 +38,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
-                    <Border x:Name="border" Height="50" Width="220" BorderThickness="0">
+                    <Border x:Name="border" Height="50" Width="230" BorderThickness="0">
                         <Border.Background>
-                            <SolidColorBrush x:Name="borderbackground" Color="#27b2f2"/>
+                            <SolidColorBrush x:Name="borderbackground" Color="#4e7390"/>
                         </Border.Background>
                         <Grid>
                             <Border x:Name="indicator" 
@@ -47,7 +48,7 @@
                                     Width="4" 
                                     HorizontalAlignment="Left" 
                                     VerticalAlignment="Center"  
-                                    Background="Wheat" 
+                                    Background="#122e44" 
                                     Visibility="Collapsed"
                                     CornerRadius="2">
                             </Border>
@@ -61,10 +62,10 @@
                         <EventTrigger RoutedEvent="Border.MouseEnter" SourceName="border">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation Storyboard.TargetName="Borderbackground" 
+                                    <ColorAnimation Storyboard.TargetName="borderbackground" 
                                             Storyboard.TargetProperty="Color"    
-                                               From="#272b2f"  To="#3e433a"
-                                                    Duration="0:0:0:4"/>
+                                               From="#4e7390"  To="#122e44"
+                                                    Duration="0:0:0:1"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
@@ -72,15 +73,15 @@
                         <EventTrigger RoutedEvent="Border.MouseLeave" SourceName="border">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation Storyboard.TargetName="BorderBackground" 
+                                    <ColorAnimation Storyboard.TargetName="borderbackground" 
                                             Storyboard.TargetProperty="Color"    
-                                               To="#272b2f"  From="#3e433a"
-                                                    Duration="0:0:0:4"/>
+                                               To="#122e44"  From="#4e7390"
+                                                    Duration="0:0:0:1"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" Value="#212529" TargetName="border"/>
+                            <Setter Property="Background" Value="#4e7390" TargetName="border"/>
                             <Setter Property="Visibility" Value="Visible" TargetName="indicator"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -88,5 +89,148 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+
+    <ImageBrush x:Key="close_app_def"
+            ImageSource="/image/shutdown_def.png"
+            Stretch="None" />
+
+    <ImageBrush x:Key="close_app_mo"
+                ImageSource="/image/shutdown_mo.png" 
+            Stretch="None" />
+
+    <Style x:Key="ExitApp"
+          TargetType="{x:Type Button}">
+
+        <Setter Property="Height"
+               Value="40" />
+        <Setter Property="Width"
+               Value="40" />
+        <Setter Property="HorizontalAlignment"
+               Value="Right" />
+        <Setter Property="VerticalAlignment"
+               Value="Top" />
+        <Setter Property="Margin"
+               Value="0,15,15,0" />
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+
+                <ControlTemplate TargetType="{x:Type Button}">
+
+                    <Border x:Name="border"
+                           BorderThickness="0"
+                           Background="{StaticResource close_app_def}">
+
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver"
+                                Value="True">
+
+                            <Setter Property="Background"
+                                   TargetName="border"
+                                   Value="{StaticResource close_app_mo}" />
+
+                        </Trigger>
+
+                        <Trigger Property="IsPressed"
+                                Value="True">
+
+                            <Setter Property="Background"
+                                   TargetName="border"
+                                   Value="{StaticResource close_app_mo}" />
+
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+        
+    </Style>
+
+
+
+
+
+
+
+    <ImageBrush x:Key="back_app_def"
+            ImageSource="/image/icons8-back-50(1).png"
+            Stretch="Fill" />
+
+    <ImageBrush x:Key="back_app_mo"
+                ImageSource="/image/icons8-back-50.png" 
+            Stretch="Fill" />
+
+    <Style x:Key="BackApp"
+          TargetType="{x:Type Button}">
+
+        <Setter Property="Height"
+               Value="40" />
+        <Setter Property="Width"
+               Value="40" />
+        <Setter Property="HorizontalAlignment"
+               Value="Right" />
+        <Setter Property="VerticalAlignment"
+               Value="Top" />
+        <Setter Property="Margin"
+               Value="0,15,15,0" />
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+
+                <ControlTemplate TargetType="{x:Type Button}">
+
+                    <Border x:Name="border"
+                           BorderThickness="0"
+                           Background="{StaticResource back_app_def}">
+
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver"
+                                Value="True">
+
+                            <Setter Property="Background"
+                                   TargetName="border"
+                                   Value="{StaticResource back_app_mo}" />
+
+                        </Trigger>
+
+                        <Trigger Property="IsPressed"
+                                Value="True">
+
+                            <Setter Property="Background"
+                                   TargetName="border"
+                                   Value="{StaticResource back_app_mo}" />
+
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
+
+
+
+
+
+
+
 
 </ResourceDictionary>

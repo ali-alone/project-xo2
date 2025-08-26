@@ -17,7 +17,7 @@ namespace project_xo2.View
     /// <summary>
     /// Interaction logic for Main.xaml
     /// </summary>
-    public partial class Main : Window
+    public partial class Main : UserControl
     {
         public Main()
         {

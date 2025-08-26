@@ -11,7 +11,7 @@ namespace project_xo2.Utilities
     public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
-        public void onPropertChenged([CallerMemberName]string propName = null)
+        public void onPropertyChenged([CallerMemberName]string propName = null)
         {
          PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
 

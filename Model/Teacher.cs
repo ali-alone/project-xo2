@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace project_xo2.Model
 {
-    class Teacher
+  public class Teacher : person
     {
+        public string Tdegree { get; set; }
+        public string Tsalary { get; set; }
+
     }
 }

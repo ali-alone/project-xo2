@@ -17,19 +17,15 @@ namespace project_xo2.Utilities
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
         }
-        public RelayCommand(Action<object> execut, Func<object, bool> canExecute)
+        public RelayCommand(Action<object> execut, Func<object, bool> canExecute = null)
         {
             _execute = execut;
-                _canExecute = canExecute;
+            _canExecute = canExecute;
 
         }
 
-        public bool canExecute(object parameter) => _canExecute == null || _canExecute(parameter);
+        public bool CanExecute(object parameter) => _canExecute == null || _canExecute(parameter);
         public void Execute(object parameter) => _execute(parameter);
 
-        public bool CanExecute(object? parameter)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

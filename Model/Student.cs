@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace project_xo2.Model
 {
-   public class Student
+   public class Student : person
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Family { get; set; }
-        public string Grade { get; set; }
+        public string Sfamily { get; set; }
+        public string Sfield { get; set; }
 
     }
 }

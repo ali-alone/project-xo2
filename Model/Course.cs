@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace project_xo2.Model
 {
-    class Course
+   public class Course
     {
+        public string ID { get; set; }
+        public string Name { get; set; }
+        public string Ctype { get; set; }
+        public string Cunit { get; set; }
     }
 }

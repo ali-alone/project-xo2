@@ -11,6 +11,21 @@
 
   <ItemGroup>
     <None Remove="image\Adobe Express - file.png" />
+    <None Remove="image\asa.png" />
+    <None Remove="image\assa.png" />
+    <None Remove="image\course icon.png" />
+    <None Remove="image\home icon.png" />
+    <None Remove="image\home.png" />
+    <None Remove="image\icons8-back-50%281%29.png" />
+    <None Remove="image\icons8-back-50.png" />
+    <None Remove="image\shutdown_def.png" />
+    <None Remove="image\shutdown_mo.png" />
+    <None Remove="image\stc icon.png" />
+    <None Remove="image\stc.png" />
+    <None Remove="image\student icon.png" />
+    <None Remove="image\teacher icon.png" />
+    <None Remove="image\test1.png" />
+    <None Remove="image\user.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,10 +37,34 @@
 
   <ItemGroup>
     <Resource Include="image\Adobe Express - file.png" />
+    <Resource Include="image\asa.png" />
+    <Resource Include="image\assa.png" />
+    <Resource Include="image\course icon.png" />
+    <Resource Include="image\home icon.png" />
+    <Resource Include="image\home.png" />
+    <Resource Include="image\icons8-back-50(1).png" />
+    <Resource Include="image\icons8-back-50.png" />
+    <Resource Include="image\shutdown_def.png" />
+    <Resource Include="image\shutdown_mo.png" />
+    <Resource Include="image\stc icon.png" />
+    <Resource Include="image\stc.png" />
+    <Resource Include="image\student icon.png" />
+    <Resource Include="image\teacher icon.png" />
+    <Resource Include="image\test1.png" />
+    <Resource Include="image\user.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Font\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="clockcontrol">
+      <HintPath>..\clockcontrol\bin\Debug\net8.0-windows\clockcontrol.dll</HintPath>
+    </Reference>
+    <Reference Include="qoutecontrol">
+      <HintPath>..\qoutecontrol\bin\Debug\net8.0-windows\qoutecontrol.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

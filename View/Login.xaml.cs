@@ -1,5 +1,11 @@
-﻿using System.Configuration;
+﻿using Microsoft.Data.SqlClient;
+using project_xo2.user;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -7,22 +13,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Microsoft.Data;
-using Microsoft.Data.SqlClient;
 
-
-namespace project_xxx
+namespace project_xo2.View
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+
+
+    public partial class Login : Window
     {
+
         string sqlstr = ConfigurationManager.ConnectionStrings["sqlstr"].ConnectionString;
 
-        public MainWindow()
+        public Login()
         {
             InitializeComponent();
         }
@@ -43,15 +45,22 @@ namespace project_xxx
 
                 if (admin == "admin" && pass == "12345")
                 {
-                    
-                    
+                    var mainForm = new MainForm();
+                    mainForm.Show();
+                    this.Hide();
+                   this.Close();
+                }
+
+                else if (admin == "user" && pass == "12345")
+                {
+                    var userForm = new UserWINDOW();
+                    userForm.Show();
+                    this.Hide();
+                    this.Close();
                 }
                 else
                 {
-                    Console.WriteLine("user");
-                    //User form1 = new User();
-                    //form1.show();
-                    //this.Hide();
+                    MessageBox.Show("not exists");
                 }
             }
             else
@@ -64,6 +73,13 @@ namespace project_xxx
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Password = "";
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -73,21 +89,20 @@ namespace project_xxx
                 DragMove();
             }
         }
-
+        
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
+            textBox3.Text = textBox2.Password;
+            textBox3.Visibility = Visibility.Visible;
+            textBox2.Visibility = Visibility.Collapsed;
 
         }
 
-        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            textBox1.Text = "";
-            textBox2.Password = "";
+            textBox2.Password = textBox3.Text;
+            textBox2.Visibility = Visibility.Visible;
+            textBox3.Visibility = Visibility.Collapsed;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using project_xo2.View;
+using qoutecontrol;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,52 @@ namespace project_xo2
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void Btn_Checked(object sender, RoutedEventArgs e)
+        {
+            QuoteControl qc = new QuoteControl();
+            QuoteHost.Content = qc;
+        }
+
+        private void CloseApp_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void BackApp_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+        }
+
+        private void Btn_Unchecked(object sender, RoutedEventArgs e)
+        {
+            QuoteHost.Content = null; 
+        }
+
+        private void Btn_Unchecked_1(object sender, RoutedEventArgs e)
+        {
+            QuoteHost.Content = null;
+
+        }
+
+        private void Btn_Unchecked_2(object sender, RoutedEventArgs e)
+        {
+            QuoteHost.Content = null;
+
+        }
+
+        private void Btn_Unchecked_3(object sender, RoutedEventArgs e)
+        {
+            QuoteHost.Content = null;
+
+        }
+
+        private void Btn_Unchecked_4(object sender, RoutedEventArgs e)
+        {
+            QuoteHost.Content = null;
         }
     }
 }

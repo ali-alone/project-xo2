@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="project_xo2.View.Coursev"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project_xo2.View"
+        xmlns:vm="clr-namespace:project_xo2.ViewModel"
+        mc:Ignorable="d"
+       Style="{StaticResource Page_Style}"
+       d:DesignHeight="600" d:DesignWidth="622">
+    <UserControl.DataContext>
+        <vm:CourseWM/>
+    </UserControl.DataContext>
+    <Grid>
+        <Border>
+            <Border.Background>
+                <ImageBrush ImageSource="/image/test1.png" Stretch ="Fill" />
+            </Border.Background>
+        </Border>
+
+
+        <TextBlock Text="ID: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="30" Margin="64,91,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="name: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="30" Margin="64,155,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="type: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="30" Margin="64,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="unit: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="30" Margin="64,286,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.088,2.631"/>
+        <TextBox x:Name="textbox1" Margin="112,93,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" FontSize="20" Background="Transparent" Opacity="0.5" Width="447"  />
+        <TextBox x:Name="textbox4" Margin="144,284,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="43" FontSize="20" Width="415" Background="Transparent" Opacity="0.5" />
+        <TextBox  x:Name="textbox3" Text="" Margin="144,221,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" FontSize="20" Background="Transparent" Width="415" Opacity="0.5"/>
+        <TextBox  x:Name="textbox2"  Text="" Margin="158,156,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" FontSize="20" Background="Transparent" Opacity="0.5"  Width="401" />
+
+        <DataGrid Margin="52,345,57,147" BorderThickness="0"  Background="#4e7390" BorderBrush="Transparent" Foreground="#879db1"   Name="datagrid1" SelectedCellsChanged="datagrid1_SelectedCellsChanged"/>
+
+        <Button x:Name="button1" Content="Add"  Margin="59,466,458,94" Click="button1_Click" />
+        <Button x:Name="button2" Content="Search"  Margin="244,522,248,38" Click="button2_Click" />
+        <Button x:Name="button3" Content="show"  Margin="454,466,63,94" Click="button3_Click" />
+        <Button x:Name="button4" Content="Delete"  Margin="321,466,196,94" Click="button4_Click" />
+        <Button x:Name="button5" Content="Edit"  Margin="192,466,325,94" Click="button5_Click" />
+
+
+        <TextBlock Text="Course" Style="{StaticResource Text_Style}" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top" FontSize="50"/>
+
+    </Grid>
+</UserControl>

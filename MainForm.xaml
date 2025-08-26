@@ -4,16 +4,98 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project_xo2"
+        xmlns:vm="clr-namespace:project_xo2.ViewModel"
+        xmlns:menu="clr-namespace:project_xo2.Utilities"
+        xmlns:controls="clr-namespace:clockcontrol;assembly=clockcontrol"
+        xmlns:qoute ="clr-namespace:qoutecontrol;assembly=qoutecontrol"
         mc:Ignorable="d" Background="Transparent"
-        Title="MainForm" Height="650" Width="1050" WindowStyle="None" WindowStartupLocation="CenterScreen">
+        Title="MainForm" Height="600" Width="850" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        d:DataContext="{d:DesignInstance vm:Navigation}">
+
+    <Window.DataContext>
+        <vm:Navigation/>
+    </Window.DataContext>
     <Grid>
-        <Border Background="#212529" CornerRadius="20"/>
+
+
+
+
+        <Border Background="#102948" CornerRadius="20"/>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"/>
-                <ColumnDefinition Width="800"/>
+                <ColumnDefinition Width="228"/>
+                <ColumnDefinition Width="549.4"/>
+                <ColumnDefinition Width="72.6"/>
             </Grid.ColumnDefinitions>
-          
+
+            <Grid HorizontalAlignment="Center" Width="228">
+
+                <Border Background="#4a5c70" CornerRadius="20,0,0,20"/>
+                <ContentControl x:Name="QuoteHost" Height="100" Margin="0,0,0,500" Background="Transparent"/>
+                <StackPanel Height="400" Width="228">
+                    <menu:Btn Style="{StaticResource BtnKey}"
+                         Command="{Binding MainCommand}" IsChecked="True" Checked="Btn_Checked" Unchecked="Btn_Unchecked">
+
+                        <Grid>
+                            <Image Source="/image/home icon.png" HorizontalAlignment="Left" />
+                            <TextBlock Text="Home" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,0,0" Style="{StaticResource Text_Style}" RenderTransformOrigin="0.622,0.5"/>
+                        </Grid>
+
+                    </menu:Btn>
+
+                    <menu:Btn Style="{StaticResource BtnKey}"
+                         Command="{Binding StudentCommand}" IsChecked="True" Checked="Btn_Checked" Unchecked="Btn_Unchecked_1">
+
+                        <Grid>
+                            <Image Source="/image/student icon.png" HorizontalAlignment="Left" />
+                            <TextBlock Text="Student" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,0,0" Style="{StaticResource Text_Style}" RenderTransformOrigin="0.622,0.5"/>
+                        </Grid>
+
+                    </menu:Btn>
+                    <menu:Btn Style="{StaticResource BtnKey}"
+                         Command="{Binding TeacherCommand}" IsChecked="True" Checked="Btn_Checked" Unchecked="Btn_Unchecked_2">
+
+                        <Grid>
+                            <Image Source="/image/teacher icon.png" HorizontalAlignment="Left" />
+                            <TextBlock Text="Teacher" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,0,0" Style="{StaticResource Text_Style}" RenderTransformOrigin="0.622,0.5"/>
+                        </Grid>
+
+                    </menu:Btn>
+                    <menu:Btn Style="{StaticResource BtnKey}"
+                         Command="{Binding CourseCommand}" IsChecked="True" Checked="Btn_Checked" Unchecked="Btn_Unchecked_3">
+
+                        <Grid>
+                            <Image Source="/image/course icon.png" HorizontalAlignment="Left" />
+                            <TextBlock Text="Course" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,0,0" Style="{StaticResource Text_Style}" RenderTransformOrigin="0.622,0.5"/>
+                        </Grid>
+                    </menu:Btn>
+                    <menu:Btn Style="{StaticResource BtnKey}"
+                         Command="{Binding STCCommand}" IsChecked="True" Checked="Btn_Checked" Unchecked="Btn_Unchecked_4">
+
+                        <Grid>
+                            <Image Source="/image/stc icon.png" HorizontalAlignment="Left" />
+                            <TextBlock Text="STC" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="60,0,0,0" Style="{StaticResource Text_Style}" RenderTransformOrigin="0.622,0.5"/>
+                        </Grid>
+
+                    </menu:Btn>
+
+
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Column="1" Grid.ColumnSpan="2">
+                <ContentControl x:Name="pages"
+                                Content="{Binding CurrentView}"/>
+            </Grid>
+            <Button x:Name="CloseApp"
+         Style="{StaticResource ExitApp}"
+         Click="CloseApp_Click" Grid.Column="2" Margin="0,10,10,0" />
+
+            <Button x:Name="BackApp"
+         Style="{StaticResource BackApp}"
+         Click="BackApp_Click" Grid.Column="1" Margin="0,15,55,0" Grid.ColumnSpan="2" Height="30" Width="34" />
+
+
         </Grid>
     </Grid>
 </Window>
