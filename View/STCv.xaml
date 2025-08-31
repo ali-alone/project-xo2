@@ -16,6 +16,7 @@
             <Border.Background>
                 <ImageBrush ImageSource="/image/stc.png" Stretch ="Fill" />
             </Border.Background>
+            <Button x:Name="button7" Content="clear"  Margin="580,155,10,418" Click="button7_Click" />
         </Border>
 
         <TextBlock Text="STNO: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="20" Margin="72,101,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -37,9 +38,10 @@
         <Button x:Name="button3" Content="show"  Margin="454,466,63,94" Click="button3_Click" />
         <Button x:Name="button4" Content="Delete"  Margin="321,466,196,94" Click="button4_Click" />
         <Button x:Name="button5" Content="Edit"  Margin="192,466,325,94" Click="button5_Click" />
-
+        <Button x:Name="button6" Content="clear"  Margin="580,207,10,366" Click="button6_Click" />
 
         <TextBlock Text="STC" Style="{StaticResource Text_Style}" HorizontalAlignment="Left" Margin="60,10,0,0" VerticalAlignment="Top" FontSize="50"/>
+        <Button x:Name="button8" Content="clear"  Margin="580,101,10,472" Click="button8_Click" />
 
 
     </Grid>

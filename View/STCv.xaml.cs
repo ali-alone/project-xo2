@@ -31,13 +31,13 @@ namespace project_xo2.View
         private void LoadStudent()
         {
             MyData db = new MyData();
-            combobox1.ItemsSource = db.ShowDate("SELECT stno + '_' +  stname + ' ' + stfamily AS FullName FROM sstudent").DefaultView;
+            combobox1.ItemsSource = db.ShowDate("SELECT stno,stno + '_' +  stname + ' ' + stfamily AS FullName FROM sstudent").DefaultView;
             combobox1.DisplayMemberPath = "FullName";
             combobox1.SelectedValuePath = "stno";
-            combobox2.ItemsSource = db.ShowDate("select tno + '_' + tname AS FullT from teacher").DefaultView;
+            combobox2.ItemsSource = db.ShowDate("select tno,tno + '_' + tname AS FullT from teacher").DefaultView;
             combobox2.DisplayMemberPath = "FullT";
             combobox2.SelectedValuePath = "tno";
-            combobox3.ItemsSource = db.ShowDate("select cno + '_' + cname AS FullC from course").DefaultView;
+            combobox3.ItemsSource = db.ShowDate("select cno,cno + '_' + cname AS FullC from course").DefaultView;
             combobox3.DisplayMemberPath = "FullC";
             combobox3.SelectedValuePath = "cno";
 
@@ -57,7 +57,7 @@ namespace project_xo2.View
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
-            STCWM sTCWM = new STCWM(combobox1.SelectedValue.ToString(), combobox2.SelectedValue.ToString(), combobox3.SelectedValue.ToString(), textbox1.Text, textbox2.Text);
+            STCWM sTCWM = new STCWM(combobox1.SelectedValue?.ToString(), combobox2.SelectedValue?.ToString(), combobox3.SelectedValue?.ToString(), textbox1.Text, textbox2.Text);
             sTCWM.deleteSTC();
         }
 
@@ -85,6 +85,21 @@ namespace project_xo2.View
                 textbox1.Text = ((DataRowView)datagrid1.SelectedItem).Row[3].ToString();
                 textbox2.Text = ((DataRowView)datagrid1.SelectedItem).Row[4].ToString();
             }
+        }
+
+        private void button6_Click(object sender, RoutedEventArgs e)
+        {
+            combobox3.Text = "";
+        }
+
+        private void button7_Click(object sender, RoutedEventArgs e)
+        {
+            combobox2.Text = "";
+        }
+
+        private void button8_Click(object sender, RoutedEventArgs e)
+        {
+            combobox1.Text = "";
         }
     }
 }

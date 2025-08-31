@@ -18,14 +18,14 @@
         </Border>
 
 
-        <TextBlock Text="ID: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="30" Margin="64,91,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="ID: "  Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="30" Margin="64,91,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBlock Text="name: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="30" Margin="64,155,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBlock Text="family: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="30" Margin="64,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <TextBlock Text="field: " Style="{StaticResource Text_Style}" FontWeight="Bold" FontSize="30" Margin="64,286,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.088,2.631"/>
-        <TextBox x:Name="textbox1" Margin="112,93,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" FontSize="20" Background="Transparent" Opacity="0.5" Width="447" TextChanged="TextBox_TextChanged" />
-        <TextBox x:Name="textbox4" Margin="144,284,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="43" FontSize="20" Width="415" Background="Transparent" Opacity="0.5" />
-        <TextBox  x:Name="textbox3" Text="" Margin="169,221,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" FontSize="20" Background="Transparent" Width="390" Opacity="0.5"/>
-        <TextBox  x:Name="textbox2"  Text="" Margin="158,156,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" FontSize="20" Background="Transparent" Opacity="0.5"  Width="401" TextChanged="TextBox_TextChanged_1"/>
+        <TextBox x:Name="textbox1" Text="{Binding SId}" Margin="112,93,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" FontSize="20" Background="Transparent" Opacity="0.5" Width="447" TextChanged="TextBox_TextChanged" />
+        <TextBox x:Name="textbox4" Text="{Binding Sname}" Margin="144,284,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="43" FontSize="20" Width="415" Background="Transparent" Opacity="0.5" />
+        <TextBox  x:Name="textbox3"  Text="{Binding Sfamily}" Margin="169,221,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" FontSize="20" Background="Transparent" Width="390" Opacity="0.5"/>
+        <TextBox  x:Name="textbox2"  Text="{Binding Sfield}" Margin="158,156,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="42" FontSize="20" Background="Transparent" Opacity="0.5"  Width="401" TextChanged="TextBox_TextChanged_1"/>
 
         <DataGrid Margin="52,345,57,147" BorderThickness="0"  Background="#4e7390" BorderBrush="Transparent" Foreground="#879db1"   Name="datagrid1" SelectionChanged="datagrid1_SelectionChanged" SelectedCellsChanged="datagrid1_SelectedCellsChanged"/>
 

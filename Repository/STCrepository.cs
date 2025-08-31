@@ -16,11 +16,27 @@ namespace project_xo2.Repository
             db.cs = $"insert into STC(stno, tno, cno , term, grade)" + $"values ('{stc.Stno}', '{stc.Tno}','{stc.Cno}','{stc.Term}', '{stc.Grade}')";
             db.ManData();
         }
+
+
         public void DeleteSTCbyADMIN(STC stc)
         {
-            db.cs = $"DELETE FROM STC WHERE stno = '{stc.Stno}'";
+            List<string> conditions = new();
 
-            db.ManData();
+            if (!string.IsNullOrEmpty(stc.Stno))
+                conditions.Add($"stno = '{stc.Stno}'");
+
+            if (!string.IsNullOrEmpty(stc.Tno))
+                conditions.Add($"tno = '{stc.Tno}'");
+
+            if (!string.IsNullOrEmpty(stc.Cno))
+                conditions.Add($"cno = '{stc.Cno}'");
+
+            if (conditions.Count > 0)
+            {
+                string whereClause = string.Join(" OR ", conditions);
+                db.cs = $"DELETE FROM STC WHERE {whereClause}";
+                db.ManData();
+            }
         }
         public void UpdateSTC(STC stc)
         {

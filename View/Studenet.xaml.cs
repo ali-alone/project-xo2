@@ -68,7 +68,7 @@ namespace project_xo2.View
         private void button5_Click(object sender, RoutedEventArgs e)
         {
             StudentWM studentWM = new StudentWM(textbox1.Text, textbox2.Text, textbox3.Text, textbox4.Text);
-            studentWM.Updatestudent();
+            studentWM.Updatestudent(textbox1.Text);
         }
 
         private void datagrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)

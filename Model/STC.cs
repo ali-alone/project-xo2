@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Azure.Identity;
+using project_xo2.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,6 @@ namespace project_xo2.Model
         public string Cno { get; set; }
         public string Term { get; set; }
         public string Grade { get; set; }
-
     }
+
 }

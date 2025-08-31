@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using project_xo2.Model;
 using project_xo2.Repository;
 namespace project_xo2.ViewModel
@@ -11,6 +14,9 @@ namespace project_xo2.ViewModel
     public class StudentWM : Utilities.ViewModelBase
     {
         private readonly Student student;
+        private string FilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TextFile" , "student.txt");
+
+
 
         public string SId
         {
@@ -57,9 +63,16 @@ namespace project_xo2.ViewModel
             };
             StudentRepository studentRepository = new StudentRepository();
             studentRepository.AddStudent(student);
+
+            using (StreamWriter sw = new StreamWriter(FilePath, true, Encoding.UTF8))
+            {
+                sw.WriteLine($"{SId};{Sname};{Sfamily};{Sfield}");
+            }
+            MessageBox.Show($"Saved at: {FilePath}");
+
         }
 
-        public void Updatestudent()
+        public void Updatestudent(string oldid)
         {
             Student student = new Student()
             {
@@ -70,6 +83,21 @@ namespace project_xo2.ViewModel
             };
             StudentRepository studentRepository = new StudentRepository();
             studentRepository.Update(student);
+
+
+
+
+            List<string> lines = File.ReadAllLines(FilePath).ToList();
+            for (int i = 0; i < lines.Count; i++)
+            {
+                String[] parts = lines[i].Split(';');
+                if (parts[0] == oldid)
+                {
+                    lines[i] = $"{SId};{Sname};{Sfamily};{Sfield}";
+                    break;
+                }
+            }
+            File.WriteAllLines(FilePath, lines);
         }
 
         public void Deletestudent()
@@ -83,6 +111,13 @@ namespace project_xo2.ViewModel
             };
             StudentRepository studentRepository = new StudentRepository();
             studentRepository.Delete(student);
+
+
+            List<string> lines = File.ReadAllLines(FilePath).ToList();
+
+            lines = lines.Where(line => !line.StartsWith(SId + ";")).ToList();
+
+            File.WriteAllLines(FilePath, lines);
         }
 
         public DataTable SearchStudent(string ID)
